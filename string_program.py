@@ -45,3 +45,18 @@ for path in paths:
         if idx+1<len(every_path): #Making sure index-out-of-bounds error won't occur
             print(every_path[idx+1])
 
+#Masking Email
+input=["mverma625@gmail.com","ramesh02@hotmail.com",
+       "sohansingh@gmail.com","swatirahane@outlook.com"]
+masked_email=[]
+for email in input:
+    username,domain=email.split("@")
+    if len(username)>2:
+        masked_mail=username[0]+"*" * (len(username)-2)+username[-1]
+    else:
+        masked_mail=username[0]+"*"
+
+    masked_mail=masked_mail + "@"+ domain
+    masked_email.append(masked_mail)
+print(masked_email)
+
