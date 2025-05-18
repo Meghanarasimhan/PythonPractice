@@ -59,8 +59,10 @@ def phone_calculator():
     result=None
     currentOperator=None
     while True:
-        userInput=input("Enter your choice Number/operator (= to evaluate, C to clear): ").strip()
+        userInput=input("Enter your choice Number/operator (= to evaluate, C to clear or Q to quit the Application): ").strip()
 
+        if userInput=="Q":
+            break
         if userInput=="C":
             result=None
             currentOperator=None
@@ -89,7 +91,7 @@ def phone_calculator():
             if result is None:
                 result=number
                 continue
-            elif currentOperator:
+            elif currentOperator is not None:
                 if currentOperator=="+":
                     result+=number
                 elif currentOperator=="-":
